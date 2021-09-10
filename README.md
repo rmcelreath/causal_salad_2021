@@ -16,4 +16,5 @@ The slides are divided into three parts, due to the size of the files. You shoul
 ## Code examples
 The code for the examples in the lecture are found in the R script.
 
-
+## Recording
+The presentation was recorded and is available here https://www.youtube.com/watch?v=KNPYUVmY3NM

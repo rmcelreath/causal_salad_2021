@@ -230,7 +230,7 @@ m2 <- ulam(
         h ~ uniform(0,2),
         # Q model
         vector[id]:Q ~ normal(0,1)
-    ) , data=dat2 , chains=4 , cores=4 )
+    ) , data=dat2 , chains=4 , cores=4, cmdstan=TRUE)
 
 precis(m2,2,omit="Q")
 

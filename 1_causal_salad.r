@@ -218,7 +218,7 @@ abline(a=0,b=1,lty=2)
 # confounded but we do a partial identification analysis
 # we use an informative prior for h (effect of Q)
 
-dat2 <- list( Y=Y , E=E , I=I , id=1:N )
+dat2 <- list( Y=Y , E=E , X=X , id=1:N )
 
 m2 <- ulam(
     alist(
@@ -230,13 +230,13 @@ m2 <- ulam(
         h ~ uniform(0,2),
         # Q model
         vector[id]:Q ~ normal(0,1)
-    ) , data=dat2 , chains=4 , cores=4 )
+    ) , data=dat2 , chains=4 , cores=4, cmdstan=TRUE)
 
 precis(m2,2,omit="Q")
 
 post <- extract.samples(m2)
 
-plot( post$h , post$g , pch=16 , col=grau(0.2) , cex=2 , ylab="effect of I" , xlab="effect of Q" )
+plot( post$h , post$g , pch=16 , col=grau(0.2) , cex=2 , ylab="effect of X" , xlab="effect of Q" )
 abline(h=0,lty=2)
 
 quantile(post$h)

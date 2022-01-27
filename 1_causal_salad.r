@@ -236,7 +236,7 @@ precis(m2,2,omit="Q")
 
 post <- extract.samples(m2)
 
-plot( post$h , post$g , pch=16 , col=grau(0.2) , cex=2 , ylab="effect of I" , xlab="effect of Q" )
+plot( post$h , post$g , pch=16 , col=grau(0.2) , cex=2 , ylab="effect of X" , xlab="effect of Q" )
 abline(h=0,lty=2)
 
 quantile(post$h)
